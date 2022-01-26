@@ -1,9 +1,9 @@
-function Employee(Employee_ID, Full_Name, Department, Level) {
+function Employee(Employee_ID, Full_Name, Department, Level,imgUrl) {
     this.Employee_ID = Employee_ID;
     this.Full_Name = Full_Name;
     this.Department = Department;
     this.Level = Level;
-    this.imageURL = `./images/${this.Full_Name}.JPG`;
+    this.imageURL = imgUrl;
 }
 Employee.prototype.calcSalary = function () {
     if (this.Level == "Senior"){

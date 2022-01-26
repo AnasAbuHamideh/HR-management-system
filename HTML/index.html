@@ -5,23 +5,52 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="../CSS/style.css">
 </head>
 <body>
     <header>
-        <nav>
+        <nav id="nav1">
             <a href="./index.html">Home</a>
             <a href="./accounting.html">Accouting</a>
         </nav>
     </header>
-    <script src="../JS/app.js"></script>
-    <footer style="bottom: 0; width: 100%; position: absolute; text-align: center;">
-        <nav>
+    <br>
+    <main>
+        <form id="form1">
+            <label for="name">Full Name:</label>
+            <input type="text" id="name" name="name" value=""><br><br>
+            <label>Department:</label>
+            <select name="department" id="depart" >
+                <option value="Administration">Administration</option>
+                <option value="Marketing">Marketing</option>
+                <option value="Development">Development</option>
+                <option value="Finance">Finance</option>
+            </select>
+            <br><br>
+            <label>Level:</label>
+            <select name="Level" id="Level" >
+                <option value="Junior">Junior</option>
+                <option value="Mid-Senior">Mid-Senior</option>
+                <option value="Senior">Senior</option>
+            </select>
+            <br><br>
+            <label for="img">ImageURL:</label>
+            <input type="text" name="ImageURL" id="img"><br><br>
+            <input type="submit" id="Submit" value="Submit">
+        </form>
+    </main>
+    <div id="div">
+      <p>
+
+      </p>
+    </div>
+    <footer>
+        <nav id="nav2">
+            <label for="">@2022 All Rights Reserved</label>
             <a href="https://www.facebook.com/">Facebook</a>
             <a href="https://www.instagram.com/">instagram</a>
-            
         </nav>
-        <label for="">@2022 All Rights Reserved</label>
     </footer>
-    
+    <script src="../JS/app.js"></script>
 </body>
 </html>

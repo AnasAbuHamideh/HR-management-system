@@ -4,7 +4,9 @@ function Employee(Employee_ID, Full_Name, Department, Level,imgUrl) {
     this.Department = Department;
     this.Level = Level;
     this.imageURL = imgUrl;
+    Employee.allemployee.push(this);
 }
+Employee.allemployee=[];
 Employee.prototype.calcSalary = function () {
     if (this.Level == "Senior"){
         this.Salary = Math.floor(Math.random() * (2000-1500) + 1500);
@@ -69,15 +71,18 @@ let addnewemployee=function(event){
     console.log(name, imgUrl, department, level, employeeId);
     const newEmployee = new Employee(employeeId, name, department, level, imgUrl)
     newEmployee.calcSalary();
-    newEmployee.render2();
+    render2();
+    settingItems();
 }
 EForm.addEventListener('submit',addnewemployee)
 
-Employee.prototype.render2=function(){
+function render2(){
+    for(let i=0;i<Employee.allemployee.length;i++){
+    let employee=Employee.allemployee[i];    
     let divEl=document.getElementById('div');
     let imgEl=document.createElement('img');
     divEl.appendChild(imgEl);
-    imgEl.setAttribute('src', this.imageURL);
+    imgEl.setAttribute('src', employee.imageURL);
     imgEl.setAttribute('alt', "image");
     let pEl=document.createElement('p');
     divEl.appendChild(pEl);
@@ -86,7 +91,23 @@ Employee.prototype.render2=function(){
     // pEl.setAttribute('Department:',this.Department);
     // pEl.setAttribute('Level:',this.Level);
     // pEl.setAttribute('Salary:',this.Salary);
-    pEl.textContent=`Name:${this.Full_Name}-ID:${this.Employee_ID}-Department:${this.Department}-Level:${this.Level}-Salary:${this.Salary}`;
+    pEl.textContent=`Name:${employee.Full_Name}-ID:${employee.Employee_ID}-Department:${employee.Department}-Level:${employee.Level}-Salary:${employee.Salary}`;
     let brEl=document.createElement('br');
     divEl.appendChild(brEl);
+    }
 }
+
+function settingItems() {
+    let data = JSON.stringify(Employee.allemployee)
+    localStorage.setItem('Employees', data);
+}
+function gittingItems() {
+    let stringObj = localStorage.getItem('Employees')
+    let parseObj = JSON.parse(stringObj)
+    if (parseObj !== null) {
+        Employee.allemployee = parseObj;
+    }
+    render2();
+}
+
+gittingItems();

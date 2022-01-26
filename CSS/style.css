@@ -1,0 +1,35 @@
+#nav1{
+  position: absolute;
+  width: 100%;
+  background-color: blue;
+  text-align: center;
+  top: 0;
+}
+#nav1 a{
+    text-decoration: none;
+    /* text-decoration-color: white; */
+    color: white;
+    padding-left: 15px;
+}
+#nav2{
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    text-align: center;
+    background-color: blue;
+    color: white;
+}
+#nav2 a{
+    text-decoration: none;
+    /* text-decoration-color: white; */
+    color: white;
+    padding-left: 15px;
+}
+div{
+    width: 20%;
+    background-color: green;
+    padding: 2px 16px
+}
+div img{
+    background-color: green;
+}
